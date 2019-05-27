@@ -151,6 +151,10 @@ a:hover {
     background-color: #222 !important;
 }
 
+.testimonial-card {
+    min-height: 24rem;
+}
+
 .testimonial-card .avatar img {
     width: 100%;
 }
