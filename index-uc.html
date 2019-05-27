@@ -13,11 +13,16 @@
 </head>
 
 <body data-spy="scroll" data-target="#nav-bar">
+    <!-- PRELOADER -->
+    <div id="mdb-preloader" class="flex-center">
+        <div id="preloader-markup">
+        </div>
+    </div>
     <!-- NAVIGATION TOP BAR -->
     <nav id="nav-bar" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
         <div class="container">
             <a class="navbar-brand" href="#"><strong>PuB Alliance</strong></a>
-            <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -41,7 +46,7 @@
                         <a class="nav-link scrollTo" href="#nav-contact">Contact</a>
                     </li>
                 </ul>
-            </div> -->
+            </div>
         </div>
     </nav>
     <main>
@@ -64,7 +69,7 @@
             </div>
         </div>
         <!-- ABOUT -->
-        <!-- <div class="view jarallax about-page">
+        <div class="view jarallax about-page">
             <div id="nav-about" class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
@@ -95,8 +100,11 @@
                                 placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
                                 qui.</div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <!--Accordion wrapper-->
                                 <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                                    <!-- Accordion card -->
                                     <div class="card">
+                                        <!-- Card header -->
                                         <div class="card-header" role="tab" id="headingOne1">
                                             <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
                                                 <h5 class="mb-0">
@@ -104,6 +112,7 @@
                                                 </h5>
                                             </a>
                                         </div>
+                                        <!-- Card body -->
                                         <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
                                             <div class="card-body">
                                                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
@@ -200,9 +209,9 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- MEMBERS -->
-        <!-- <div class="view jarallax members-page" style="height: 100vh;" data-jarallax-video="https://www.youtube.com/embed/UkeDo1LhUqQ">
+        <div class="view jarallax members-page" style="height: 100vh;" data-jarallax-video="https://www.youtube.com/embed/UkeDo1LhUqQ">
             <div id="nav-members" class="container">
                 <div class="row">
                     <div class="col-md-12 text-center">
@@ -210,9 +219,9 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- ALLIES -->
-        <!-- <div class="view jarallax allies-page">
+        <div class="view jarallax allies-page">
             <div id="nav-allies" class="container">
                 <div class="row">
                     <div class="col-sm-12 text-center">
@@ -220,7 +229,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-4 col-md-6 col-sm-12">
+                    <!-- <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="card testimonial-card wow-in mb-4">
                             <div class="card-up peach-gradient"></div>
                             <div class="avatar mx-auto white">
@@ -258,7 +267,7 @@
                                 <p><i class="fas fa-quote-left"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, adipisci. <i class="fas fa-quote-right"></i></p><i> - R5</i>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-lg-4 col-md-6 col-sm-12">
                         <div class="card testimonial-card wow-in mb-4" data-wow-delay="0.3s">
                             <div class="card-up purple-gradient"></div>
@@ -301,9 +310,9 @@
                 </div>
                 <div class="spacer-5"></div>
             </div>
-        </div> -->
+        </div>
         <!-- EVENTS -->
-        <!-- <div class="view jarallax events-page">
+        <div class="view jarallax events-page">
             <img class="jarallax-img lazyload" data-src="public/img/harvest-bg.jpg" alt="">
             <div id="nav-events" class="container">
                 <div class="row">
@@ -492,9 +501,9 @@
                 </div>
                 <div class="spacer-5"></div>
             </div>
-        </div> -->
+        </div>
         <!-- CONTACT -->
-        <!-- <div id="nav-contact" class="container-fluid text-center contact-page">
+        <div id="nav-contact" class="container-fluid text-center contact-page">
             <div class="row">
                 <div class="col-md-6 mt-md-0 mt-3">
                     <h5 class="text-uppercase font-weight-bold">Main Alliance</h5>
@@ -511,7 +520,7 @@
             <div class="footer-copyright text-center py-3">© 2019 Copyright:
                 <a href="#">PuB Alliance</a>
             </div>
-        </footer> -->
+        </footer>
     </main>
     <!-- SCRIPTS -->
     <script type="text/javascript" src="public/js/lazysizes.min.js" async></script>
@@ -537,6 +546,13 @@
             };
             $('#navbarSupportedContent').collapse('hide');
         });
+        $("body").attr("aria-busy", !0),
+            $("#preloader-markup").load("./public/html/preload.html",
+                function() {
+                    $(window).on("load", function() {
+                        $("#mdb-preloader").fadeOut("slow"), $("body").removeAttr("aria-busy")
+                    })
+                });
         $(".wow-in").addClass("wow fadeIn");
         new WOW().init();
         objectFitImages();
