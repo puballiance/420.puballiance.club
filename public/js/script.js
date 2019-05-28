@@ -1,6 +1,11 @@
 $('document').ready(function() {
     // RESTYLE THE DROPDOWN MENU
     $('#google_translate_element').on("click", function() {
+
+        $(".goog-te-gadget-simple").addClass("active");
+        setTimeout(function() {
+            $(".goog-te-gadget-simple").removeClass("active");
+        }, 300);
         // Change font family and color
         $("iframe").contents().find(".goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div, .goog-te-menu2 *")
             .css({

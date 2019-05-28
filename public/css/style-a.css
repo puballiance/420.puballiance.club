@@ -201,30 +201,32 @@ a:hover {
     text-transform: uppercase;
 }*/
 
-.goog-te-gadget-simple {
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+/*.goog-te-gadget-simple {
+    background-color: rgba(255, 255, 255) !important;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
     padding: 8px !important;
+    border: none !important;
     border-radius: 4px !important;
     font-size: 1rem !important;
     line-height: 2rem !important;
     display: inline-block;
     cursor: pointer;
     zoom: 1;
-}
+}*/
 
 /*.goog-te-menu2 {
     max-width: 100%;
 }*/
 
 .goog-te-menu-value {
-    color: #fff !important;
+    color: #222 !important;
 }
 
 .goog-te-menu-value img,
 .goog-te-menu-value span:nth-child(3),
 .goog-te-menu-value span:nth-child(5),
 .goog-te-gadget-icon,
+.goog-tooltip.skiptranslate,
 .goog-te-banner-frame.skiptranslate {
     display: none !important;
 }
@@ -257,3 +259,30 @@ a:hover {
         text-align: center;
     }
 }
+
+.goog-te-gadget-simple {
+  /*display: inline-block;*/
+  /*vertical-align: middle;*/
+  -webkit-transform: scale(1.25);
+  /*margin: 110px 30px;*/
+  /*width: 60px;*/
+  /*height: 60px;*/
+  /*line-height: 2.6;*/
+  padding: 1rem !important;
+  color: #e1dada !important;
+  text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 100px !important;
+  text-decoration: none;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #e3e3e3));
+  background-image: -moz-gradient(linear, left top, left bottom, color-stop(0%, #f4f4f4), color-stop(100%, #e3e3e3));
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25), 10px 10px 15px #e3e3e3, -10px 10px 15px #e3e3e3, -15px -15px 15px rgba(255, 255, 255, 0.4), 15px -15px 15px rgba(255, 255, 255, 0.4), inset 0px 2px 0px #fff;
+  -webkit-transition: box-shadow 0.3s ease-in-out,  background-image 0.3s ease-in-out, text-shadow 0.5s linear, color 0.5s linear;
+  -moz-transition: box-shadow 0.3s ease-in-out,  background-image 0.3s ease-in-out, text-shadow 0.5s linear, color 0.5s linear;
+}
+.goog-te-gadget-simple.active {
+  text-shadow: 0px 0px 7px #fff !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e3e3e3), color-stop(100%, #f4f4f4));
+  background-image: -moz-gradient(linear, left top, left bottom, color-stop(0%, #e3e3e3), color-stop(100%, #f4f4f4));
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.15), 10px 10px 15px rgba(255, 255, 255, 0.4), -10px 10px 15px rgba(255, 255, 255, 0.4), -10px -10px 15px #e3e3e3, 10px -10px 15px #e3e3e3, inset 0px -3px 0px rgba(255, 255, 255, 0.4), inset 0px 3px 3px rgba(0, 0, 0, 0.04);
+}
+
